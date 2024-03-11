@@ -4,9 +4,12 @@ import com.common.SearchCondition;
 import com.management.product.model.dto.ProductDTO;
 import com.management.product.model.service.ProductService;
 import com.management.product.view.ProductPrint;
+import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
 import java.util.Map;
+
+import static com.common.Template.getSqlSession;
 
 public class ProductController {
 
@@ -42,6 +45,8 @@ public class ProductController {
 
     public void selectProductByCondition(SearchCondition searchCondition) {
 
+        SqlSession sqlSession = getSqlSession();
+        List<ProductDTO> productList = productService.selectProductByCondition(searchCondition);
         // 3. 조건에 따른 제품 목록을 조회하는 메소드
         //    (조건 1) Service 객체를 호출하여 List<ProductDTO> 타입으로 조건에 따른 제품 목록을 조회하세요.
         //    (조건 2) 제품 목록이 비어있지 않은 경우, SearchCondition과 List<ProductDTO> 객체를 반환하여

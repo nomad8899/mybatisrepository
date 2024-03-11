@@ -6,14 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cc5e7d14-3d8c-4d55-a9ef-000b0fb30361" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../../JavaFoundation" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaFoundation" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../chap04-dynamic-sql-lecture-source/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../chap04-dynamic-sql-lecture-source/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ohgiraffers/section01/xmlmapper/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ohgiraffers/section01/xmlmapper/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ohgiraffers/section01/xmlmapper/ElementTestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ohgiraffers/section01/xmlmapper/ElementTestMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ohgiraffers/section01/xmlmapper/ElementTestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ohgiraffers/section01/xmlmapper/ElementTestService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ohgiraffers/section01/xmlmapper/ElementTestMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ohgiraffers/section01/xmlmapper/ElementTestMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +80,7 @@
       <workItem from="1709696600800" duration="5408000" />
       <workItem from="1709771656195" duration="16602000" />
       <workItem from="1709888479578" duration="25000" />
+      <workItem from="1710117331835" duration="13000" />
     </task>
     <servers />
   </component>
