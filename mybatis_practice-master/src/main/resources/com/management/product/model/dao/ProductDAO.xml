@@ -44,9 +44,62 @@
             (참고 2) 판매점 유형별 조회의 경우,
                      '백화점'이면 할인율이 0%인 제품, '아울렛'이면 할인율이 1% 이상인 제품을 조회합니다.
             (참고 3) 이달의 신상품 조희의 경우, 출시일이 이번 달인 제품(예를 들어, 현재 기준이면 2023년 5월 출시 제품)울 조회합니다. -->
+    <select id="selectProductByCondition" resultMap="productResultMap" parameterType="com.common.SearchCondition">
+        SELECT PRODUCT_CODE
+        , PRODUCT_NAME
+        , ORIGIN_COST
+        , RELEASE_DATE
+        , DISCOUNT_RATE
+        , SALES_QUANTITY
+        , STOCK_QUANTITY
+        , CATEGORY_CODE
+        , PRODUCTION_STATUS
+        FROM PRODUCT_INFO
+        <where>
+            <if test="option == 'productName'">
+                AND PRODUCT_NAME LIKE CONCAT('%', #{ value }, '%')
+            </if>
+            <if test="option == 'salesStore'">
+                AND (
+                (#{ value } = '백화점' AND DISCOUNT_RATE = 0) OR
+                (#{ value } = '아울렛' AND DISCOUNT_RATE >= 1)
+                )
+            </if>
+            <if test="option == 'newProduct'">
+                AND RELEASE_DATE LIKE '202305%%'
+            </if>
+            <if test="option == 'nonProduction'">
+                AND PRODUCTION_STATUS = 'N'
+            </if>
+        </where>
+    </select>
+
 
     <!-- 5. 제품 정보를 등록하는 쿼리를 작성하세요.
             (쿼리id) insertProduct -->
+    <insert id="insertProduct" parameterType="com.management.product.model.dto.ProductDTO">
+        INSERT INTO
+            product_info (
+                  PRODUCT_NAME
+                , CATEGORY_CODE
+                , ORIGIN_COST
+                , RELEASE_DATE
+                , STOCK_QUANTITY
+                , DISCOUNT_RATE
+                , SALES_QUANTITY
+                , PRODUCTION_STATUS
+            )
+        VALUES (
+              #{ productName }
+            , #{ categoryCode }
+            , #{ originCost }
+            , #{ releaseDate }
+            , #{ stockquantity }
+            , #{ discountRate }
+            , #{ salesquantity }
+            , #{ productionStatus }
+        )
+    </insert>
 
     <!-- 6. 사용자가 수정을 원하는 데이터만 수정하도록 Dynamic Query를 활용한 쿼리를 작성하세요.
             (쿼리id) updateProduct -->
