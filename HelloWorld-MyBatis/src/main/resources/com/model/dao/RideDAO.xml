@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.model.dao.RideDAO">
+    <resultMap id="RideResultMap" type="com.model.dto.RideDTO">
+        <id property="rideCode" column="RIDE_CODE"/>
+        <result property="entranceCode" column="ENTRANCE_CODE"/>
+        <result property="rideSort" column="RIDE_SORT"/>
+        <result property="watingTime" column="WATING_TIME"/>
+        <result property="operRationInfo" column="OPERATION_INFO"/>
+    </resultMap>
+
+    <update id="rideUpdate" parameterType="com.model.dto.RideDTO">
+        UPDATE
+            ride_info
+        SET
+            ENTRANCE_CODE =  #{ entranceCode }
+        WHERE
+            RIDE_CODE = #{ rideCode }
+    </update>
+</mapper>
